@@ -54,7 +54,7 @@ li {
 
 
 .header {
-width: 100%;
+    width: 100%;
     padding: 1.7rem 1.6rem;
     background-color: #fff;
     position: fixed;
@@ -134,7 +134,7 @@ width: 100%;
 
     opacity: 0;
     visibility: hidden;
-    transition: opacity .3s ease,visibility .3s ease;
+    transition: opacity .3s ease, visibility .3s ease;
     z-index: 900;
 }
 
@@ -193,7 +193,7 @@ width: 100%;
 }
 
 .cover__inner {
-    max-width: 39rem; 
+    max-width: 39rem;
     margin-inline: auto;
 }
 
@@ -289,27 +289,27 @@ width: 100%;
 }
 
 .about__img {
-  width: 39.2rem;
+    width: 39.2rem;
 }
 
 .about__overlay {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .about__overlay::before {
-  content: "";
-  position: absolute;
-  top: 3.5rem;
-  bottom: 3.2rem;
-  left: 1.6rem;
-  right: 1.6rem;
-  background: rgba(255, 255, 255, 0.85);
-  border-radius: 3.2rem;
-  z-index: 0;
+    content: "";
+    position: absolute;
+    top: 3.5rem;
+    bottom: 3.2rem;
+    left: 1.6rem;
+    right: 1.6rem;
+    background: rgba(255, 255, 255, 0.85);
+    border-radius: 3.2rem;
+    z-index: 0;
 }
 
 .about__texts {
@@ -366,19 +366,19 @@ width: 100%;
     .about__content {
         display: flex;
         flex-direction: row-reverse;
-        gap: 6rem; 
+        gap: 6rem;
         max-width: 106rem;
     }
 
     .about__overlay {
-    position: static;
-  }
+        position: static;
+    }
 
-  .about__overlay::before {
-display: none;
-  }
+    .about__overlay::before {
+        display: none;
+    }
 
-      .about__img {
+    .about__img {
         flex: 1;
         width: 39rem;
         height: 57rem;
@@ -390,19 +390,19 @@ display: none;
     }
 
 
-.about__lead-main {
-    font-size: 2rem;
-    margin-right: 4rem;
-}
+    .about__lead-main {
+        font-size: 2rem;
+        margin-right: 4rem;
+    }
 
-.about__lead-sub {
-    font-size: 2rem;
-    margin-bottom: 2.5rem;
-}
+    .about__lead-sub {
+        font-size: 2rem;
+        margin-bottom: 2.5rem;
+    }
 
-.about__body {
-    font-size: 1.5rem;
-}
+    .about__body {
+        font-size: 1.5rem;
+    }
 
 }
 
