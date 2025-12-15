@@ -1,0 +1,417 @@
+@charset "UTF-8";
+
+/* ▼レスポンシブrem設定（SP：390px基準 / PC：1070px基準） */
+html {
+    scroll-behavior: smooth;
+    font-size: calc(10 * 100vw / 390);
+    max-width: 39rem;
+    margin-inline: auto;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: calc(10 * 100vw / 1240);
+        max-width: 124rem;
+    }
+}
+
+@media (min-width: 1240px) {
+    html {
+        font-size: 62.5%;
+    }
+}
+
+body {
+    font-family: "Noto Sans JP", sans-serif;
+    color: #000;
+    line-height: 1.75;
+    padding-top: 6.3rem;
+}
+
+@media (min-width: 768px) {
+    body {
+        padding-top: 11.4rem;
+    }
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+li {
+    list-style: none;
+}
+
+
+/*----------------------------- ヘッダー --------------------------------*/
+
+
+.header {
+width: 100%;
+    padding: 1.7rem 1.6rem;
+    background-color: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+
+}
+
+.header__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header__logo img {
+    width: 19.7rem;
+    height: 2.2rem;
+}
+
+
+
+
+
+/* PCナビゲーション*/
+.header__nav {
+    display: none;
+}
+
+.header__nav-list {
+    display: flex;
+    gap: 4.2em;
+}
+
+.header__nav-item {
+    font-weight: 700;
+    font-size: 1.6rem;
+}
+
+
+
+/* ハンバーガーボタン */
+.header__hamburger {
+    width: 2.5rem;
+    height: 3rem;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.header__hamburger-bar {
+    width: 2.4rem;
+    height: 0.2rem;
+    background-color: #000;
+}
+
+.header__hamburger-bar:first-child,
+.header__hamburger-bar:nth-child(2) {
+    margin-bottom: 0.6rem;
+}
+
+
+
+/* SPメニュー */
+.header__menu {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% - 3rem);
+    background-color: #168352;
+    padding: 3.1rem 1rem;
+    border-radius: 2.4rem;
+    text-align: center;
+
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .3s ease,visibility .3s ease;
+    z-index: 900;
+}
+
+.header__menu--active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.header__menu-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    align-items: center;
+}
+
+.header__menu-link {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #fff;
+}
+
+
+
+/* ヘッダーpc表示 */
+
+@media (min-width: 768px) {
+
+    .header {
+        padding: 4.2rem 11.5rem 2rem;
+    }
+
+    .header__logo img {
+        width: 26.4rem;
+        height: 3rem;
+    }
+
+    .header__hamburger {
+        display: none;
+    }
+
+    .header__nav {
+        display: block;
+    }
+
+    .header__menu {
+        display: none;
+    }
+}
+
+
+/*----------------------------- カバー --------------------------------*/
+
+
+.cover {
+    padding: 1.2rem 1.5rem 1.4rem;
+}
+
+.cover__inner {
+    max-width: 39rem; 
+    margin-inline: auto;
+}
+
+.cover__title {
+    font-size: 2.8rem;
+    font-weight: 700;
+    line-height: 1.5;
+    margin-bottom: 1.9rem;
+}
+
+.cover__lead {
+    font-size: 1.5rem;
+    font-weight: 400;
+    letter-spacing: 0.005em;
+    line-break: anywhere;
+    margin-top: 0;
+}
+
+/* 画像（共通） */
+.cover__img {
+    width: 35.9rem;
+    height: 45.2rem;
+    margin-top: 2.5rem;
+}
+
+
+@media (min-width: 768px) {
+
+    .cover {
+        padding: 4.3rem 3.6rem;
+    }
+
+    .cover__inner {
+        max-width: 124rem;
+    }
+
+    .cover__texts {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .cover__title {
+        font-size: 4rem;
+        width: 50.4rem;
+        margin-bottom: 0;
+    }
+
+    .cover__lead {
+        font-size: 1.5rem;
+        width: 53rem;
+        margin-top: 0.5rem;
+    }
+
+    .cover__img {
+        width: 116.9rem;
+        height: 55rem;
+        margin-top: 5.9rem;
+    }
+}
+
+
+
+/*----------------------------- アバウト --------------------------------*/
+
+.about {
+    padding: 4rem 0;
+}
+
+.about__inner {
+    max-width: 39rem;
+    margin-inline: auto;
+}
+
+.about__subtitle {
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 1.6rem;
+    color: #168352;
+    line-height: 1;
+}
+
+.about__title {
+    text-align: center;
+    font-weight: 700;
+    font-size: 2rem;
+    margin-bottom: 1.4rem;
+}
+
+/* SP縦並び */
+.about__content {
+    position: relative;
+}
+
+.about__img {
+  width: 39.2rem;
+}
+
+.about__overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about__overlay::before {
+  content: "";
+  position: absolute;
+  top: 3.5rem;
+  bottom: 3.2rem;
+  left: 1.6rem;
+  right: 1.6rem;
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 3.2rem;
+  z-index: 0;
+}
+
+.about__texts {
+    position: relative;
+    padding: 2.4rem 4.3rem 2.4rem 4.1rem;
+    z-index: 1;
+}
+
+.about__lead-main {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #111;
+    margin-right: 0;
+}
+
+.about__lead-sub {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #111;
+    margin-bottom: 0.8rem;
+
+}
+
+.about__body {
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: #111;
+}
+
+
+
+@media (min-width: 768px) {
+
+    .about {
+        padding: 1.3rem 3rem;
+    }
+
+    .about__inner {
+        max-width: 124rem;
+    }
+
+    .about__subtitle {
+        font-size: 2rem;
+        line-height: 1.5;
+    }
+
+
+    .about__title {
+        font-size: 2.8rem;
+        margin-bottom: 2.2rem;
+    }
+
+    /* PC横並び */
+    .about__content {
+        display: flex;
+        flex-direction: row-reverse;
+        gap: 6rem; 
+        max-width: 106rem;
+    }
+
+    .about__overlay {
+    position: static;
+  }
+
+  .about__overlay::before {
+display: none;
+  }
+
+      .about__img {
+        flex: 1;
+        width: 39rem;
+        height: 57rem;
+    }
+
+    .about__texts {
+        flex: 1;
+        padding: 2.6rem 8.6rem 3rem 10.7rem;
+    }
+
+
+.about__lead-main {
+    font-size: 2rem;
+    margin-right: 4rem;
+}
+
+.about__lead-sub {
+    font-size: 2rem;
+    margin-bottom: 2.5rem;
+}
+
+.about__body {
+    font-size: 1.5rem;
+}
+
+}
+
+
+
+
+
+
+/*----------------------------- ヘッダー --------------------------------*/
+/*----------------------------- ヘッダー --------------------------------*/
+/*----------------------------- ヘッダー --------------------------------*/
+/*----------------------------- ヘッダー --------------------------------*/
