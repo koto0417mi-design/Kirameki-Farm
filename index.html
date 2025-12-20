@@ -14,6 +14,8 @@
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://example.com">
     <meta property="og:site_name" content="Kirameki Farm">
+    <!-- リセットCSS -->
+    <link rel="stylesheet" href="https://unpkg.com/ress@4.0.0/dist/ress.min.css">
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,8 +24,6 @@
         rel="stylesheet">
     <!-- swiper -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
-    <!-- リセットCSS -->
-    <link rel="stylesheet" href="https://unpkg.com/ress@4.0.0/dist/ress.min.css">
     <!--style-->
     <link rel="stylesheet" href="/assets/style/main.css">
 </head>
@@ -330,11 +330,57 @@
                         </a>
                     </li>
 
+                    <li class="news__item">
+                        <a href="#" class="news__link">
+                            <time class="news__date" datetime="2023-04-05">2023.04.05</time>
+                            <span class="news__label news__label--release">ニュースリリース</span>
+                            <span class="news__text">食の安全を守る！キラメキファーム、農産物の品質管理に力を入れる</span>
+                        </a>
+                    </li>
 
+                    <li class="news__item">
+                        <a href="#" class="news__link">
+                            <time class="news__date" datetime="2023-03-12">2023.03.12</time>
+                            <span class="news__label news__label--release">ニュースリリース</span>
+                            <span class="news__text">害虫撃退！キラメキファームの自然環境に優しい取り組み</span>
+                        </a>
+                    </li>
+
+                    <li class="news__item">
+                        <a href="#" class="news__link news__link--small">
+                            <time class="news__date" datetime="2023-02-01">2023.02.01</time>
+                            <span class="news__label news__label--info">お知らせ</span>
+                            <span class="news__text">キラメキファーム×最新ドローン技術 目覚ましい成果発表</span>
+                        </a>
+                    </li>
+
+                    <li class="news__item">
+                        <a href="#" class="news__link">
+                            <time class="news__date" datetime="2023-01-25">2023.01.25</time>
+                            <span class="news__label news__label--release">ニュースリリース</span>
+                            <span class="news__text">キラメキファーム、無農薬野菜で子供たちの未来を支える</span>
+                        </a>
+                    </li>
+
+                    <li class="news__item">
+                        <a href="#" class="news__link">
+                            <time class="news__date" datetime="2023-01-08">2023.01.08</time>
+                            <span class="news__label news__label--info">お知らせ</span>
+                            <span class="news__text">キラメキ農法で収穫量2倍！革新的な農業技術が話題</span>
+                        </a>
+                    </li>
 
                 </ul>
+
+                <div class="news__btn">
+                    <a href="/news" class="news__btn-link">ニュース一覧へ</a>
+                </div>
+
             </div>
         </section>
+
+
+
 
     </main>
 
@@ -345,16 +391,11 @@
 
     <!-- フッター -->
     <footer class="footer">
-        <div class="footer-inner">
-            <ul class="footer-nav-list">
-                <li class="header__nav-item">
-                    <a href="/price">価格・スペック</a>
-                </li>
-                <li class="header__nav-item">
-                    <a href="/faq">よくあるご質問</a>
-                </li>
-            </ul>
-        </div>
+        <nav class="footer__nav">
+            <a href="/price" class="footer__link footer__link--price">価格・スペック</a>
+            <span class="footer__separator" aria-hidden="true"></span>
+            <a href="/faq" class="footer__link footer__link--faq">よくあるご質問</a>
+        </nav>
     </footer>
 
 
