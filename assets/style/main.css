@@ -1,6 +1,4 @@
 @charset "UTF-8";
-
-/* ▼レスポンシブrem設定（SP：390px基準 / PC：1070px基準） */
 html {
     scroll-behavior: smooth;
     font-size: calc(10 * 100vw / 390);
@@ -46,10 +44,7 @@ li {
     list-style: none;
 }
 
-
 /*----------------------------- ヘッダー --------------------------------*/
-
-
 .header {
     width: 100%;
     padding: 1.7rem 1.6rem;
@@ -74,10 +69,6 @@ li {
     height: 2.2rem;
 }
 
-
-
-
-
 /* PCナビゲーション*/
 .header__nav {
     display: none;
@@ -92,8 +83,6 @@ li {
     font-weight: 700;
     font-size: 1.6rem;
 }
-
-
 
 /* ハンバーガーボタン */
 .header__hamburger {
@@ -117,8 +106,6 @@ li {
     margin-bottom: 0.6rem;
 }
 
-
-
 /* SPメニュー */
 .header__menu {
     position: absolute;
@@ -130,7 +117,6 @@ li {
     padding: 3.2rem 1rem;
     border-radius: 2.4rem;
     text-align: center;
-
     opacity: 0;
     visibility: hidden;
     transition: opacity .3s ease, visibility .3s ease;
@@ -159,10 +145,6 @@ li {
     margin-right: 0.7rem;
 }
 
-
-
-/* ヘッダーpc表示 */
-
 @media (min-width: 768px) {
 
     .header {
@@ -171,7 +153,6 @@ li {
 
     .header__inner {
         max-width: 124rem;
-
     }
 
     .header__logo img {
@@ -196,10 +177,7 @@ li {
     }
 }
 
-
 /*----------------------------- カバー --------------------------------*/
-
-
 .cover {
     padding: 1.2rem 1.6rem 1.6rem;
 }
@@ -224,15 +202,12 @@ li {
     margin-top: 0;
 }
 
-/* 画像（共通） */
 .cover__img {
     width: 100%;
     margin-top: 2.5rem;
 }
 
-
 @media (min-width: 768px) {
-
     .cover {
         padding: 4.2rem 3.6rem;
     }
@@ -262,11 +237,7 @@ li {
         margin-top: 5.9rem;
     }
 }
-
-
-
 /*----------------------------- アバウト --------------------------------*/
-
 .about {
     padding: 4rem 0 0;
 }
@@ -302,10 +273,9 @@ li {
 
 .about__overlay {
     position: absolute;
-    padding: 3.2rem 1.6rem;
+    padding: 3.2rem 0 ;
     inset: 0;
 }
-
 
 .about__texts {
     position: relative;
@@ -314,6 +284,8 @@ li {
     opacity: 1;
     padding: 1.5rem 2.5rem 1.7rem;
     border-radius: 3rem;
+    width: 35.8rem;
+    margin-inline: auto;
 }
 
 .about__lead-main {
@@ -338,10 +310,7 @@ li {
     letter-spacing: 0;
 }
 
-
-
 @media (min-width: 768px) {
-
     .about {
         padding: 1.6rem 3rem 6.2rem;
     }
@@ -380,6 +349,7 @@ li {
 
     .about__texts {
         padding: 6.6rem 7.5rem 3rem 11.3rem;
+        width: unset;
     }
 
 
@@ -397,17 +367,9 @@ li {
         font-size: 1.5rem;
         letter-spacing: 0.003em;
     }
-
 }
 
-
-
-
-
-
 /*----------------------------- フィーチャーズ --------------------------------*/
-
-
 .features {
     background-color: #f3f9f6;
     padding: 4.8rem 1.6rem 5.7rem;
@@ -458,7 +420,6 @@ li {
     border-radius: 0 0 2.4rem 2.4rem;
 }
 
-
 @media (min-width: 768px) {
 
     .features {
@@ -496,13 +457,7 @@ li {
     }
 }
 
-
-
-
-
-
 /*----------------------------- プロダクツ --------------------------------*/
-
 .products {
     padding: 5rem 1.6rem 5.6rem;
 }
@@ -632,13 +587,7 @@ li {
     }
 }
 
-
-
-
-
-
 /*----------------------------- ケース --------------------------------*/
-
 .case {
     background-color: #f3f9f6;
     padding: 4.8rem 1.6rem;
@@ -690,9 +639,6 @@ li {
     margin: 0.8rem 0 0 0.2rem;
 }
 
-
-
-
 @media (min-width: 768px) {
 
     .case {
@@ -722,26 +668,20 @@ li {
 
     .case__item {
         width: calc((100% - (2.9rem * 2)) / 3);
+        transition: opacity 0.3s ease;
+    }
+
+    .case__item:hover {
+        opacity: 0.5;
     }
 
     .case__text {
         font-size: 1.9rem;
         margin: 0.7rem 0 0 0.1rem;
     }
-
-    .case__item:hover {
-        opacity: 1;
-    }
 }
 
-
-
-
-
-
-
 /*----------------------------- ニュース --------------------------------*/
-
 .news {
     padding: 4.8rem 1.6rem 6.2rem;
 }
@@ -799,9 +739,7 @@ li {
     font-size: 1.3rem;
     color: #fff;
     background-color: #473221;
-
     border-radius: 0.4rem;
-
 }
 
 .news__label--info {
@@ -821,6 +759,9 @@ li {
     margin-left: 0;
 }
 
+.news__text:hover {
+    opacity: 0.5;
+}
 
 .news__btn {
     position: relative;
@@ -832,7 +773,6 @@ li {
     display: flex;
     align-items: center;
     justify-content: center;
-
     width: 100%;
     height: 6.6rem;
     background-color: #09947b;
@@ -848,7 +788,7 @@ li {
   position: absolute;
   inset: 0;
 
-  background-color: #09947b;
+  background-color: #066655;
   border-radius: 3.3rem;
 
   transform: translateY(0.6rem);
@@ -905,28 +845,18 @@ li {
     padding: 1.7rem 0 1.5rem;
 }
 
-
 .news__date {
     font-size: 1.4rem;
 }
-
 
     .news__text {
         width: auto;
         font-size: 1.5rem;
         margin-left: 0.2rem;
     }
-
-
-
 }
 
-
-
-
 /*----------------------------- フッター --------------------------------*/
-
-
 .footer {
     background-color: #168352;
     padding: 2.2rem 1.6rem;
@@ -977,5 +907,4 @@ li {
 .footer__separator {
     margin-left: 0.2rem;
 }
-
 }

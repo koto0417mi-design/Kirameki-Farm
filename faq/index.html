@@ -30,13 +30,42 @@
 <body>
     <!-- ヘッダー -->
     <header class="header">
-        <div class="header-container">
-            <img class="header-logo" src="/assets/image/header_logo.svg" alt="Kira-meki">
-            <h1 class="header-title">
-            </h1>
-        </div>
-    </header>
+        <div class="header__inner">
 
+            <div class="header__logo">
+                <a href="#">
+                    <img src="/assets/image/header_logo.svg" alt="Kirameki Farm">
+                </a>
+            </div>
+            <!-- PCナビゲーション -->
+            <nav class="header__nav">
+                <ul class="header__nav-list">
+                    <li class="header__nav-item">
+                        <a href="/price">価格・スペック</a>
+                    </li>
+                    <li class="header__nav-item">
+                        <a href="/faq">よくあるご質問</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- SPハンバーガーボタン -->
+            <button type="button" class="header__hamburger">
+                <span class="header__hamburger-bar"></span>
+                <span class="header__hamburger-bar"></span>
+                <span class="header__hamburger-bar"></span>
+            </button>
+        </div>
+
+        <!-- SPメニュー -->
+        <nav class="header__menu">
+            <ul class="header__menu-list">
+                <li class="header__menu-item"><a href="#" class="header__menu-link">トップ</a></li>
+                <li class="header__menu-item"><a href="/price" class="header__menu-link">価格・スペック</a></li>
+                <li class="header__menu-item"><a href="/faq" class="header__menu-link">よくあるご質問</a></li>
+            </ul>
+        </nav>
+    </header>
 
 
 
