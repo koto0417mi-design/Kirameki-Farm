@@ -14,17 +14,18 @@
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://example.com/price/">
     <meta property="og:site_name" content="Kirameki Farm">
+    <!-- リセットCSS -->
+    <link rel="stylesheet" href="https://unpkg.com/ress@4.0.0/dist/ress.min.css">
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
-    <!-- リセットCSS -->
-    <link rel="stylesheet" href="https://unpkg.com/ress@4.0.0/dist/ress.min.css">
-    <!-- slick -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Montserrat:wght@600;700&display=swap"
+        rel="stylesheet">
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
     <!--style-->
-    <link rel="stylesheet" href="/assets/style/main.css">
+    <link rel="stylesheet" href="../assets/style/main.css">
 </head>
 
 <body>
@@ -37,13 +38,13 @@
                     <img src="/assets/image/header_logo.svg" alt="Kirameki Farm">
                 </a>
             </div>
-            <!-- PCナビゲーション -->
+            <!-- グローバルメニュー -->
             <nav class="header__nav">
                 <ul class="header__nav-list">
-                    <li class="header__nav-item">
+                    <li class="global__menu global__menu--green">
                         <a href="/price">価格・スペック</a>
                     </li>
-                    <li class="header__nav-item">
+                    <li class="global__menu">
                         <a href="/faq">よくあるご質問</a>
                     </li>
                 </ul>
@@ -67,57 +68,205 @@
         </nav>
     </header>
 
-
-
-
+    <!-- メイン -->
     <main>
 
-    <!-- カバー -->
+        <!-- ページカバー -->
+        <section class="page-cover">
+            <div class="page-cover__inner">
+                <picture class="page-cover__picture">
+                    <source media="(min-width: 768px)" srcset="/assets/image/price_cover_pc.jpg">
+                    <img src="/assets/image/price_cover_sp.jpg" alt="">
+                </picture>
 
+                <h1 class="page-cover__title">価格・スペック</h1>
+            </div>
+        </section>
 
+        <!-- パンくずリスト -->
+        <nav class="breadcrumb" aria-label="breadcrumb">
+            <ol class="breadcrumb__list">
+                <li class="breadcrumb__item"><a href="#">トップ</a></li>
+                <li class="breadcrumb__item breadcrumb__item--current">価格・スペック</li>
+            </ol>
+        </nav>
 
+        <!-- ギャラリー-->
+        <section class="gallery">
+            <div class="gallery__inner">
 
+                <!-- セクション見出し（共通） -->
+                <div class="section-head">
+                    <h2 class="section-head__title">ギャラリー</h2>
+                </div>
 
+                <!-- Swiper -->
+                <div class="gallery__slider swiper">
 
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide gallery__slide">
+                            <img src="/assets/image/gallery_01.jpg" alt="">
+                        </div>
 
+                        <div class="swiper-slide gallery__slide">
+                            <img src="/assets/image/gallery_02.jpg" alt="">
+                        </div>
+
+                        <div class="swiper-slide gallery__slide">
+                            <img src="/assets/image/gallery_03.jpg" alt="">
+                        </div>
+                    </div>
+
+                    <div class="gallery__pagination swiper-pagination"></div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 特長 -->
+        <section class="merit">
+            <div class="merit__inner">
+
+                <!-- セクション見出し（共通） -->
+                <div class="section-head">
+                    <h2 class="section-head__title">特長</h2>
+                </div>
+
+                <ul class="merit__list">
+                    <li class="merit__item">
+                        <picture>
+                            <source media="(min-width: 768px)" srcset="/assets/image/merit_01_pc.jpg">
+                            <img class="merit__img" src="/assets/image/merit_01_sp.jpg" alt="">
+                        </picture>
+                        <p class="merit__text">
+                            自動操縦が可能で、短時間で大量の農作物を監視、収穫、播種、散布などの作業ができます。
+                        </p>
+                    </li>
+
+                    <li class="merit__item">
+                        <picture>
+                            <source media="(min-width: 768px)" srcset="/assets/image/merit_02_pc.jpg">
+                            <img class="merit__img" src="/assets/image/merit_02_sp.jpg" alt="">
+                        </picture>
+                        <p class="merit__text merit__text--over">
+                            高精度のカメラやセンサーを搭載しており、正確な土壌・作物の情報を収集でき、水や肥料などの資源を適切に配分できます。
+                        </p>
+                    </li>
+
+                    <li class="merit__item">
+                        <picture>
+                            <source media="(min-width: 768px)" srcset="/assets/image/merit_03_pc.jpg">
+                            <img class="merit__img" src="/assets/image/merit_03_sp.jpg" alt="">
+                        </picture>
+                        <p class="merit__text merit__text--mini">
+                            必要な場所にだけ肥料や農薬を散布することができます。これにより、農薬や肥料の過剰使用が抑えられ、環境負荷やコスト削減に繋がります。
+                        </p>
+                    </li>
+                </ul>
+
+            </div>
+        </section>
+
+        <!-- メーカー小売価格 -->
+        <section class="price">
+            <div class="price__inner">
+
+                <!-- セクション見出し（共通） -->
+                <div class="section-head">
+                    <h2 class="section-head__title">メーカー希望小売価格</h2>
+                </div>
+
+                <div class="price__box">
+                    <p class="price__value">
+                        <span class="price__amount">¥550,000</span>
+                        <span class="price__tax">（税込）</span>
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- スペック -->
+        <section class="spec">
+            <div class="spec__inner">
+
+                <!-- セクション見出し（共通） -->
+                <div class="section-head">
+                    <h2 class="section-head__title">スペック</h2>
+                </div>
+
+                <div class="spec__category">機体</div>
+
+                <dl class="spec__list">
+                    <div class="spec__row">
+                        <dt class="spec__term">ドローン名</dt>
+                        <dd class="spec__desc">アグリ・ファルコン</dd>
+                    </div>
+
+                    <div class="spec__row">
+                        <dt class="spec__term">製品番号</dt>
+                        <dd class="spec__desc">AGF-100</dd>
+                    </div>
+
+                    <div class="spec__row">
+                        <dt class="spec__term">飛行時間</dt>
+                        <dd class="spec__desc">60 分</dd>
+                    </div>
+
+                    <div class="spec__row">
+                        <dt class="spec__term">最大積載量</dt>
+                        <dd class="spec__desc">5 kg</dd>
+                    </div>
+
+                    <div class="spec__row">
+                        <dt class="spec__term">操作距離</dt>
+                        <dd class="spec__desc">3 km</dd>
+                    </div>
+
+                    <div class="spec__row">
+                        <dt class="spec__term">機体重量</dt>
+                        <dd class="spec__desc">8 kg</dd>
+                    </div>
+
+                    <div class="spec__row">
+                        <dt class="spec__term">機体寸法</dt>
+                        <dd class="spec__desc">150 x 150 x 40 cm</dd>
+                    </div>
+
+                    <div class="spec__row">
+                        <dt class="spec__term">機能・特徴</dt>
+                        <dd class="spec__desc">自動操縦、植物生育モニタリング、農薬散布</dd>
+                    </div>
+                </dl>
+
+            </div>
+        </section>
+
+        <!-- お問い合わせ -->
+        <section class="cta">
+            <div class="cta__inner">
+                <a href="/contact" class="cta__btn">お問い合わせ</a>
+            </div>
+        </section>
 
     </main>
 
-
-
-
-
-
     <!-- フッター -->
     <footer class="footer">
-        <div class="footer-container">
-            <img class="footer-logo" src="/assets/image/footer_logo.svg" alt="Kira-meki">
-            <div class="footer-nav">
-                <ul class="footer-nav-list">
-                    <li class="footer-nav-item">
-                        <a class="footer-nav-link" href="/company/">会社概要</a>
-                    </li>
-                    <li class="footer-nav-item">
-                        <a class="footer-nav-link" href="/privacy-policy/">個人情報保護ポリシー</a>
-                    </li>
-                    <li class="footer-nav-item">
-                        <a class="footer-nav-link" href="/contact/">お問い合わせ</a>
-                    </li>
-                </ul>
-            </div>
-
-            <small class="footer-uppercase">© 2023 Kira-meki Inc. All rights reserved.</small>
-
+        <div class="footer__nav">
+            <a href="/price" class="footer__link footer__link--price">価格・スペック</a>
+            <span class="footer__separator" aria-hidden="true"></span>
+            <a href="/faq" class="footer__link footer__link--faq">よくあるご質問</a>
         </div>
     </footer>
 
-
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-    <!-- Slick -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <!-- Swiper  -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
     <!--main-->
-    <script src="/assets/script/main.js"></script>
+    <script src="../assets/script/main.js"></script>
 </body>
 
 </html>

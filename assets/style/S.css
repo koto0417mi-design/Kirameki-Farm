@@ -673,8 +673,8 @@ li {
 
     .case__list {
         flex-direction: row;
-        justify-content: center;
-        gap: 3.1rem;
+        justify-content: space-between;
+        gap: 2.1rem;
     }
 
     .case__item {
@@ -900,7 +900,7 @@ li {
 
 @media (min-width: 768px) {
     .footer {
-        padding: 3.4rem 2rem 3.5rem;
+        padding: 3.4rem 2rem;
     }
 
     .footer__nav {
@@ -920,18 +920,17 @@ li {
     }
 }
 
-/* -------------------------- グローバルメニュー --------------------------------*/
+/* -------------------------- 下層ページ カバー --------------------------------*/
 .global__menu {
     transition: 0.3s ease;
     font-size: 1.6rem;
     font-weight: 700;
 }
 
-.global__menu--green {
+.global__menu:hover {
     color: #168352;
 }
 
-/* -------------------------- 下層ページ カバー --------------------------------*/
 .page-cover {
     padding-inline: 1.6rem;
 }
@@ -963,30 +962,25 @@ li {
 }
 
 .breadcrumb {
-    padding-top: 2.7rem;
+  margin: 2.4rem 1.4rem 0 0;
 }
 
 .breadcrumb__list {
-    max-width: 36rem;
-    margin-inline: auto;
-    display: flex;
-    justify-content: flex-end;
+  display: flex;
+  justify-content: flex-end;
 }
 
 .breadcrumb__item {
-    display: flex;
-    font-size: 1.2rem;
-    align-items: center;
+  display: flex;
+  font-size: 1.2rem;
 }
 
 .breadcrumb__item:not(.breadcrumb__item--current)::after {
-    content: "";
-    width: 0.6rem;
-    height: 1rem;
-    margin: 0 0.7rem;
-    background-image: url("/assets/image/breadcrumb_arrow.png");
-    background-repeat: no-repeat;
-    background-size: contain;
+  content: "";
+  width: 0.6rem;
+  height: 1rem;
+  margin: 0.7rem 0.7rem 0 0.8rem;
+  background-image: url("/assets/image/breadcrumb_arrow.png");
 }
 
 @media (min-width: 768px) {
@@ -1002,7 +996,7 @@ li {
 
     .page-cover__picture {
         height: 55rem;
-        overflow: hidden;
+        border-radius: 3.2rem;
     }
 
     .page-cover__title {
@@ -1010,31 +1004,20 @@ li {
         left: 0;
         bottom: 0;
         font-size: 3.6rem;
-        padding: 3.6rem 3.7rem 4rem 4rem;
-        border-radius: 0 4rem 0 0;
+        padding: 4rem 6rem;
+        border-radius: 0 3.2rem 0 0;
         margin-top: 0;
-    }
-
-    .breadcrumb {
-        padding-top: 1.9rem;
-    }
-
-    .breadcrumb__list {
-        max-width: 120.4rem;
     }
 }
 
 
 /* ----------------------------- 共通の見出し --------------------------------*/
 .section-head {
-    position: relative;
-    margin-bottom: 3.1rem;
-    max-width: 39rem;
-    margin-inline: auto;
+    margin-bottom: 1.6rem;
 }
 
 .section-head__title {
-    font-size: 2.2rem;
+    font-size: 1.8rem;
     font-weight: 700;
     margin-bottom: 0.6rem;
 }
@@ -1043,95 +1026,53 @@ li {
 .section-head::before,
 .section-head::after {
     content: "";
-    position: absolute;
-    left: 0;
+    display: block;
     height: 0.3rem;
 }
 
 .section-head::before {
     width: 35.8rem;
     background-color: #ddd;
-    bottom: -0.7rem;
 }
 
 .section-head::after {
     width: 5rem;
     background-color: #168352;
-    bottom: -0.7rem;
+    margin-top: -0.3rem;
 }
 
-@media (min-width: 768px) {
-    .section-head {
-        max-width: 80rem;
-        margin-bottom: 5rem;
-    }
-
-    .section-head__title {
-        font-size: 2.8rem;
-    }
-
-    .section-head::before,
-    .section-head::after {
-        height: 0.5rem;
-    }
-
-    .section-head::before {
-        width: 80rem;
-        bottom: -1.9rem;
-    }
-
-    .section-head::after {
-        width: 10rem;
-        bottom: -1.9rem;
-    }
-}
 
 /* ----------------------------- ギャラリー --------------------------------*/
 .gallery {
-    padding: 2.6rem 0;
+    padding: 3.2rem 1.6rem;
 }
 
 .gallery__inner {
     max-width: 39rem;
     margin-inline: auto;
-    padding-inline: 1.6rem;
-    overflow: hidden;
 }
 
 /* Swiper */
-.swiper,
-.gallery__slide {
-    overflow: hidden;
-}
-
-.swiper-wrapper {
-    display: flex;
-}
-
-.swiper-slide {
-    flex-shrink: 0;
-}
-
 .gallery__slider {
     position: relative;
 }
 
-.gallery__slide img {
-    width: 100%;
-    max-width: 35.8rem;
-    aspect-ratio: 358 / 236.97;
-    height: auto;
+.gallery__slide {
     border-radius: 2.4rem;
-    margin-inline: auto;
+    overflow: hidden;
 }
 
-.gallery__pagination .swiper-pagination {
+.gallery__slide img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.gallery__pagination {
     position: absolute;
-    width: auto;
     bottom: 1.2rem;
-    left: 33.4rem;
-    display: flex;
-    z-index: 2;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .gallery__pagination .swiper-pagination-bullet {
@@ -1139,295 +1080,38 @@ li {
     height: 0.8rem;
     background-color: #eee;
     opacity: 1;
-    margin: 0;
-    border-radius: 50%;
+    margin: 0 0.4rem;
 }
 
 .gallery__pagination .swiper-pagination-bullet-active {
     background-color: #168352;
 }
 
+
 @media (min-width: 768px) {
+    .section-head {
+        margin-bottom: 2.4rem;
+    }
+
+    .section-head::before,
+    .section-head::after {
+        height: 0.2rem;
+    }
+
+    .section-head::before {
+        width: 80rem;
+    }
+
+    .section-head::after {
+        width: 10rem;
+        margin-top: -0.2rem;
+    }
+
     .gallery {
-        padding: 4.9rem 0;
+        padding: 5rem 3rem;
     }
 
     .gallery__inner {
-        max-width: 80rem;
-        margin-inline: auto;
-        padding-inline: 0;
-    }
-
-    .gallery__slide img {
-        max-width: 80rem;
-        aspect-ratio: 800 / 499.94;
-    }
-
-    .gallery__pagination .swiper-pagination {
-        bottom: 1.3rem;
-    }
-
-    .gallery__pagination .swiper-pagination-bullet {
-        margin: 0.3rem;
-    }
-}
-
-/* ----------------------------- 特長（下層ページ） -------------------------------- */
-.merit {
-    padding: 2.8rem 0;
-}
-
-.merit__inner {
-    max-width: 39rem;
-    margin-inline: auto;
-    padding-inline: 1.6rem;
-}
-
-.merit__list {
-    display: flex;
-    flex-direction: column;
-    gap: 3.6rem;
-}
-
-.merit__img {
-    width: 100%;
-    border-radius: 1.6rem;
-    margin-bottom: 0.8rem;
-}
-
-.merit__text {
-    font-size: 1.8rem;
-    font-weight: 700;
-    line-height: 1.7;
-}
-
-.merit__text--over {
-    word-break: keep-all;
-}
-
-.merit__text--mini {
-    overflow-wrap: anywhere;
-    padding: 0.1rem 0.1rem 0 0;
-}
-
-@media (min-width: 768px) {
-    .merit {
-        padding: 1.1rem 0;
-    }
-
-    .merit__inner {
-        max-width: 86rem;
-        padding-inline: 3rem;
-    }
-
-    .merit__list {
-        flex-direction: row;
-        gap: 3rem;
-    }
-
-    .merit__img {
-        margin-bottom: 0.9rem;
-    }
-
-    .merit__item {
-        width: calc((100% - 6rem) / 3);
-    }
-
-    .merit__text {
-        font-size: 1.8rem;
-    }
-
-    .merit__text--over {
-        word-break: normal;
-    }
-}
-
-/* ----------------------------- メーカー小売価格 -------------------------------- */
-.price {
-    padding: 2.2rem 0;
-}
-
-.price__inner {
-    max-width: 39rem;
-    margin-inline: auto;
-    padding-inline: 1.6rem;
-}
-
-.price__box {
-    text-align: start;
-}
-
-.price__amount {
-    font-size: 3.2rem;
-    font-weight: 700;
-    font-family: 'Montserrat', sans-serif;
-    line-height: 1;
-
-}
-
-.price__tax {
-    font-size: 1.6rem;
-}
-
-@media (min-width: 768px) {
-    .price {
-        padding: 4.5rem 0;
-    }
-
-    .price__inner {
-        max-width: 83rem;
-        padding-inline: 0;
-    }
-
-    .price__amount {
-        line-height: 0.9;
-        margin-left: 1.5rem;
-    }
-}
-
-/* ----------------------------- スペック -------------------------------- */
-.spec {
-    padding: 2.9rem 0 6.6rem;
-}
-
-.spec__inner {
-    max-width: 39rem;
-    margin-inline: auto;
-    padding-inline: 1.6rem;
-}
-
-.spec__category {
-    font-size: 2rem;
-    font-weight: 700;
-    margin: 0 0 1.8rem;
-    line-height: 1.4;
-    padding-left: 1.6rem;
-    border-left: 2px solid #168352;
-}
-
-/* スペック表 */
-.spec__list {
-    border: 1px solid #ddd;
-    margin-inline: 0;
-}
-
-.spec__row {
-    display: grid;
-    grid-template-columns: 1fr;
-}
-
-.spec__term,
-.spec__desc {
-    font-size: 1.6rem;
-    border-top: 1px solid #ddd;
-}
-
-.spec__row:first-child .spec__term,
-.spec__row:first-child .spec__desc {
-    border-top: none;
-}
-
-.spec__term {
-    background-color: #f5f5f5;
-    font-weight: 700;
-    padding: 0.5rem 1.4rem 0.7rem 1.8rem;
-}
-
-.spec__desc {
-    background-color: #fff;
-    font-weight: 400;
-    padding: 0.4rem 1.4rem 0.4rem 1.8rem;
-}
-
-@media (min-width: 768px) {
-    .spec {
-        padding: 1.2rem 0 7rem;
-    }
-
-    .spec__inner {
-        max-width: 80rem;
-        padding-inline: 0;
-    }
-
-    .spec__category {
-        font-size: 2.4rem;
-        margin: 0 3rem 2.5rem;
-        line-height: 1.7;
-        padding-left: 1.6rem;
-    }
-
-    .spec__list {
-        margin-inline: 3rem;
-    }
-
-    .spec__row {
-        grid-template-columns: 20rem 1fr;
-    }
-
-    .spec__term {
-        padding: 1.5rem 1.4rem 1.9rem 1.8rem;
-    }
-
-    .spec__desc {
-        padding: 1.4rem 1.4rem 0.4rem 2.2rem;
-    }
-}
-
-/* ----------------------------- お問い合わせ -------------------------------- */
-.cta {
-    position: relative;
-    height: 36rem;
-    background-image: url("/assets/image/cta_bg_sp.jpg");
-    background-size: cover;
-    background-position: center;
-    overflow: hidden;
-}
-
-.cta::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background-color: rgba(0, 0, 0, 0.5);
-}
-
-.cta__inner {
-    position: relative;
-    z-index: 1;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.cta__btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    min-width: 36rem;
-    height: 8rem;
-    font-size: 2rem;
-    font-weight: 700;
-    color: #fff;
-    border: 2px solid #fff;
-    border-radius: 4rem;
-    background-color: transparent;
-    text-decoration: none;
-    transition: opacity 0.3s ease;
-}
-
-    .cta__btn:hover {
-        background-color: #fff;
-        color: #168352;
-    }
-
-@media (min-width: 768px) {
-    .cta {
-    height: 45rem;
-    background-image: url("/assets/image/cta_bg_pc.jpg");
-    }
-
-    .cta__btn {
-        min-width: 36rem;
-        height: 8rem;
+        max-width: 120rem;
     }
 }
