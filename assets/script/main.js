@@ -16,6 +16,7 @@ $(function () {
         new Swiper('.gallery__slider', {
             slidesPerView: 1,
             loop: true,
+            spaceBetween:30,
             pagination: {
                 el: '.gallery__pagination',
                 clickable: true,
