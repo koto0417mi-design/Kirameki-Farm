@@ -1434,7 +1434,7 @@ li {
 
 /* ----------------------------- FAQ -------------------------------- */
 .faq {
-    padding: 3.6rem 1.6rem;
+    padding: 3.6rem 1.6rem 6.4rem;
 }
 
 .faq__inner {
@@ -1445,77 +1445,160 @@ li {
 .faq__list {
     display: flex;
     flex-direction: column;
-    gap: 1.6rem;
+    gap: 2rem;
 }
 
 .faq__item {
+    position: relative;
     border: 1px solid #ccc;
     border-radius: 1.6rem;
     overflow: hidden;
 }
 
-.faq-item__head {
-    position: relative;
-    width: 100%;
-    padding: 2.4rem;
-    text-align: left;
-    border: 0;
+.faq__title {
+    display: flex;
+    padding: 1.3rem 2.3rem 1.9rem;
     cursor: pointer;
 }
 
-.faq-item__q {
-    display: inline-block;
+.faq__title--small {
+    padding: 1.4rem 2.3rem 1.6rem;
+}
+
+.faq__title--big {
+    padding: 1.4rem 2.3rem 2rem;
+}
+
+.faq__q {
     font-size: 2.4rem;
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
     color: #168352;
-    line-height: 1;
 }
 
-.faq-item__tags {
+.faq__body {
     display: flex;
-    gap: 0.8rem;
-    margin-bottom: 0.8rem;
+    flex-direction: column;
 }
 
-.faq-item__tag {
-    padding: 0.4rem 0.8rem;
+.faq__tags {
+    display: flex;
+    gap: 0.9rem;
+    padding: 1rem 1.6rem 0.3rem;
+}
+
+.faq__tag {
     border: 1px solid #168352;
     border-radius: 0.4rem;
     font-size: 1.1rem;
     color: #168352;
 }
 
-.faq-item__question {
+.faq__tag--use {
+    padding: 0.1rem 1rem 0.2rem;
+}
+
+.faq__tag--product {
+    padding: 0.2rem 1.6rem 0.1rem;
+    }
+
+.faq__tag--usage {
+    padding: 0.1rem 1.6rem 0.2rem;
+    }
+
+.faq__question {
+    padding: 0 3.5rem 0 1.6rem;
     font-size: 1.6rem;
+    font-weight: 700;
     line-height: 1.6;
 }
 
-.faq-item__icon {
+.faq__question--law {
+    padding: 0 3.5rem 0 1.6rem;
+    line-break: anywhere;
+}
+
+.faq__title::after {
     position: absolute;
-    top: 2.4rem;
-    right: 2.4rem;
-    width: 1.9rem;
+    content: "";
+    top: 1.3rem;
+    right: 2rem;
+    width: 2.2rem;
+    height: 1.9rem;
+    background-image: url("/assets/image/faq_icon_plus.png");
+    background-size: contain;
+    margin-top: 1.4rem;
+}
+
+.faq__item--active .faq__title::after {
+    background-image: url("/assets/image/faq_icon_minus.png");
+}
+
+.faq__content {
+    display: none;
+}
+
+.faq__answer {
+    margin-top: -1.3rem;
+    padding: 0 2.5rem 1.7rem;
+    font-size: 1.6rem;
+    line-height: 1.7;
+}
+
+@media (min-width: 768px) {
+    .faq {
+        padding: 6rem 3rem 7rem;
+    }
+
+    .faq__inner {
+        max-width: 80rem;
+    }
+
+    .faq__list {
+        gap: 2.4rem;
+    }
+
+    .faq__title {
+        padding: 1rem 2.4rem 1.9rem 3rem;
+    }
+
+    .faq__title--big {
+        padding: 1.1rem 2rem 2rem 3.1rem;
+    }
+
+    .faq__title::after {
+        top: 1.1rem;
+        right: 2.8rem;
+    }
+
+    .faq__question {
+        font-size: 1.8rem;
+        padding: 0 3.5rem 0 1.6rem;
+    }
+
+    .faq__answer {
+        padding: 0 2.4rem 2rem 3.2rem;
+        margin-top: 0;
+        line-break: anywhere;
+    }
+
+    .faq__tags {
+        padding: 1.2rem 1.6rem 0.8rem;
+    }
+
+    .faq__tag--use {
+        padding: 0.3rem 1rem 0.1rem;
+    }
+
+    .faq__title::after {
+    top: 1.1rem;
+    right: 2.8rem;
+    width: 2.2rem;
     height: 1.9rem;
 }
 
-.faq-item__icon img {
-    width: 100%;
-    height: 100%;
-    display: block;
+.faq__item--active .faq__title::after {
+        top: 2rem;
+    right: 3rem;
 }
-
-.faq-item__body {
-    display: none;
-    padding: 0 2.4rem 2.4rem;
-}
-
-.faq-item__body p {
-    font-size: 1.6rem;
-    line-height: 1.8;
-}
-
-.faq-item.is-open .faq-item__body {
-    display: block;
-    margin-top: -0.8rem;
 }

@@ -26,16 +26,16 @@ $(function () {
 });
 
 //  アコーディオン
-document.querySelectorAll('.faq__title').forEach(title => {
-    title.addEventListener('click', () => {
-        const content = title.nextElementSibling;
-        const icon = title.querySelector('.faq__icon');
+document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll(".faq__title").forEach(title => {
+        title.addEventListener("click", () => {
+            const item = title.closest(".faq__item");
+            const content = title.nextElementSibling;
 
-        const isOpen = content.style.display === 'block';
+            const isActive = item.classList.contains("faq__item--active");
 
-        content.style.display = isOpen ? 'none' : 'block';
-        icon.src = isOpen
-            ? '/assets/image/icon_plus.png'
-            : '/assets/image/icon_minus.png';
+            item.classList.toggle("faq__item--active");
+            content.style.display = isActive ? "none" : "block";
+        });
     });
 });
