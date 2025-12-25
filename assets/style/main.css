@@ -957,7 +957,8 @@ li {
 }
 
 .breadcrumb {
-    padding: 2.7rem 1.6rem 0;
+    margin-top: 2.7rem;
+    max-width: 37.6rem;
 }
 
 .breadcrumb__list {
@@ -1003,7 +1004,9 @@ li {
     }
 
     .breadcrumb {
-        padding: 2rem 9.8rem;
+        max-width: 120.4rem;
+        margin-inline: auto;
+        margin-top: 2rem;
     }
 }
 
