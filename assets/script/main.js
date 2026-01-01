@@ -16,7 +16,7 @@ $(function () {
         new Swiper('.gallery__slider', {
             slidesPerView: 1,
             loop: true,
-            spaceBetween:30,
+            spaceBetween: 30,
             pagination: {
                 el: '.gallery__pagination',
                 clickable: true,
@@ -26,17 +26,15 @@ $(function () {
 
 });
 
-//  アコーディオン
-document.addEventListener("DOMContentLoaded", () => {
-    document.querySelectorAll(".faq__title").forEach(title => {
-        title.addEventListener("click", () => {
-            const item = title.closest(".faq__item");
-            const content = title.nextElementSibling;
+//アコーディオン
+$(function () {
+    $('.faq__title').on('click', function () {
+        const $item = $(this).closest('.faq__item');
+        const $list = $(this).closest('.faq__list');
 
-            const isActive = item.classList.contains("faq__item--active");
+        $item.toggleClass('faq__item--active');
 
-            item.classList.toggle("faq__item--active");
-            content.style.display = isActive ? "none" : "block";
-        });
+        const hasActiveItem = $list.find('.faq__item--active').length > 0;
+        $list.toggleClass('faq__list--expanded', hasActiveItem);
     });
 });

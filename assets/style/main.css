@@ -359,14 +359,14 @@ li {
 
 
     .about__texts {
-        padding: 6.6rem 7.5rem 3rem 11.3rem;
+        padding: 6.6rem 8.6rem 3rem 12.9rem;
         width: unset;
     }
 
 
     .about__lead-main {
         font-size: 2rem;
-        margin-right: 4rem;
+        margin-right: 5.1rem;
     }
 
     .about__lead-sub {
@@ -875,9 +875,28 @@ li {
 
 .footer__nav {
     display: flex;
-    align-items: center;
     justify-content: center;
+}
+
+.footer__list {
+    display: flex;
+    align-items: center;
     gap: 1.6rem;
+}
+
+.footer__item {
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+.footer__item+.footer__item::before {
+    content: "";
+    width: 0.1rem;
+    height: 2.4rem;
+    background-color: #fff;
+    margin-right: 1.6rem;
+    transform: translateX(-50%);
 }
 
 .footer__link {
@@ -891,20 +910,17 @@ li {
     opacity: 0.7;
 }
 
-.footer__separator {
-    width: 0.1rem;
-    height: 2.4rem;
-    background-color: #fff;
-    margin-left: 0;
-}
-
 @media (min-width: 768px) {
     .footer {
         padding: 3.4rem 2rem 3.5rem;
     }
 
-    .footer__nav {
-        gap: 2rem;
+    .footer__list {
+        gap: 2.1rem;
+    }
+
+    .footer__item+.footer__item::before {
+        margin-right: 2rem;
     }
 
     .footer__link--price {
@@ -913,10 +929,6 @@ li {
 
     .footer__link--faq {
         font-size: 1.4rem;
-    }
-
-    .footer__separator {
-        margin-left: 0.2rem;
     }
 }
 
@@ -956,9 +968,32 @@ li {
     margin-top: 2.8rem;
 }
 
+@media (min-width: 768px) {
+    .page-cover {
+        padding-inline: 3rem;
+    }
+
+    .page-cover__inner {
+        max-width: 120rem;
+        margin-inline: auto;
+        margin-top: 3.9rem;
+    }
+
+    .page-cover__title {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        font-size: 3.6rem;
+        padding: 3.6rem 3.7rem 4rem 4rem;
+        border-radius: 0 4rem 0 0;
+        margin-top: 0;
+    }
+}
+
+/* ----------------------------- パンくずリスト --------------------------------*/
 .breadcrumb {
     margin-top: 2.7rem;
-    max-width: 37.6rem;
+    padding-inline: 1.4rem;
 }
 
 .breadcrumb__list {
@@ -983,29 +1018,8 @@ li {
 }
 
 @media (min-width: 768px) {
-    .page-cover {
-        padding-inline: 3rem;
-    }
-
-    .page-cover__inner {
-        max-width: 120rem;
-        margin-inline: auto;
-        margin-top: 3.9rem;
-    }
-
-    .page-cover__title {
-        position: absolute;
-        left: 0;
-        bottom: 0;
-        font-size: 3.6rem;
-        padding: 3.6rem 3.7rem 4rem 4rem;
-        border-radius: 0 4rem 0 0;
-        margin-top: 0;
-    }
-
     .breadcrumb {
-        max-width: 120.4rem;
-        margin-inline: auto;
+        padding-inline: 9.8rem;
         margin-top: 2rem;
     }
 }
@@ -1430,7 +1444,11 @@ li {
 .faq__list {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 2.1rem;
+}
+
+.faq__list--expanded {
+    gap: 2.4rem;
 }
 
 .faq__item {
@@ -1441,17 +1459,14 @@ li {
 }
 
 .faq__title {
+    position: relative;
     display: flex;
-    padding: 1.3rem 2.3rem 1.9rem;
+    padding: 1.3rem 2.4rem 1.7rem 2.3rem;
     cursor: pointer;
 }
 
-.faq__title--small {
-    padding: 1.4rem 2.3rem 1.6rem;
-}
-
-.faq__title--big {
-    padding: 1.4rem 2.3rem 2rem;
+.faq__title--long {
+    padding: 1.3rem 2.4rem 1.8rem 2.3rem;
 }
 
 .faq__q {
@@ -1468,8 +1483,12 @@ li {
 
 .faq__tags {
     display: flex;
-    gap: 0.9rem;
-    padding: 1rem 1.6rem 0.3rem;
+    gap: 0.8rem;
+    padding: 1rem 1.6rem 0;
+}
+
+.faq__item--active .faq__tags {
+    padding: 1rem 1.5rem 0.1rem 1.6rem;
 }
 
 .faq__tag {
@@ -1480,59 +1499,80 @@ li {
 }
 
 .faq__tag--use {
-    padding: 0.1rem 1rem 0.2rem;
+    padding: 0.1rem 1.1rem;
 }
 
 .faq__tag--product {
-    padding: 0.2rem 1.6rem 0.1rem;
-    }
+    padding: 0.1rem 1.6rem;
+}
 
 .faq__tag--usage {
-    padding: 0.1rem 1.6rem 0.2rem;
-    }
+    padding: 0.1rem 1.6rem;
+}
 
 .faq__question {
     padding: 0 3.5rem 0 1.6rem;
     font-size: 1.6rem;
     font-weight: 700;
-    line-height: 1.6;
-}
-
-.faq__question--law {
-    padding: 0 3.5rem 0 1.6rem;
+    line-height: 1.75;
     line-break: anywhere;
 }
 
 .faq__title::after {
     position: absolute;
     content: "";
-    top: 1.3rem;
-    right: 2rem;
-    width: 2.2rem;
+    top: 3.5rem;
+    right: 2.2rem;
+    width: 2rem;
     height: 1.9rem;
+    transform: translateY(-50%);
     background-image: url("/assets/image/faq_icon_plus.png");
     background-size: contain;
-    margin-top: 1.4rem;
+    background-repeat: no-repeat;
 }
 
 .faq__item--active .faq__title::after {
     background-image: url("/assets/image/faq_icon_minus.png");
+    top: 4.4rem;
+    right: 2.3rem;
 }
 
 .faq__content {
-    display: none;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(-0.8rem);
+    transition:
+        max-height 0.4s ease,
+        opacity 0.3s ease,
+        transform 0.3s ease;
+}
+
+.faq__item--active .faq__content {
+    margin-top: -1.5rem;
+    max-height: 150rem;
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .faq__answer {
-    margin-top: -1.3rem;
-    padding: 0 2.5rem 1.7rem;
+    padding: 0 2.2rem 1.7rem 2.4rem;
     font-size: 1.6rem;
-    line-height: 1.7;
+    line-height: 1.75;
+    line-break: anywhere;
+}
+
+.faq__answer--big {
+    padding: 0 2.2rem 1.6rem 2.6rem;
+}
+
+.faq__answer--small {
+    padding: 0.8rem 2rem 1.7rem 2.7rem;
 }
 
 @media (min-width: 768px) {
     .faq {
-        padding: 6rem 3rem 7rem;
+        padding: 5.8rem 3rem 7rem;
     }
 
     .faq__inner {
@@ -1543,17 +1583,36 @@ li {
         gap: 2.4rem;
     }
 
+    .faq__list--expanded {
+        gap: 2.4rem;
+    }
+
     .faq__title {
-        padding: 1rem 2.4rem 1.9rem 3rem;
+        padding: 1.1rem 2.4rem 1.6rem 3rem;
     }
 
-    .faq__title--big {
-        padding: 1.1rem 2rem 2rem 3.1rem;
+    .faq__title--long {
+        padding: 1.2rem 2.4rem 1.6rem 3rem;
     }
 
-    .faq__title::after {
-        top: 1.1rem;
-        right: 2.8rem;
+    .faq__tags {
+        padding: 1.2rem 1.6rem 0.9rem;
+    }
+
+    .faq__item--active .faq__tags {
+        padding: 1.4rem 1.6rem 0.9rem;
+    }
+
+    .faq__tag--use {
+        padding: 0.1rem 1.1rem;
+    }
+
+    .faq__tag--product {
+        padding: 0.1rem 1.6rem;
+    }
+
+    .faq__tag--usage {
+        padding: 0.1rem 1.6rem;
     }
 
     .faq__question {
@@ -1561,29 +1620,29 @@ li {
         padding: 0 3.5rem 0 1.6rem;
     }
 
-    .faq__answer {
-        padding: 0 2.4rem 2rem 3.2rem;
-        margin-top: 0;
-        line-break: anywhere;
-    }
-
-    .faq__tags {
-        padding: 1.2rem 1.6rem 0.8rem;
-    }
-
-    .faq__tag--use {
-        padding: 0.3rem 1rem 0.1rem;
-    }
-
     .faq__title::after {
-    top: 1.1rem;
-    right: 2.8rem;
-    width: 2.2rem;
-    height: 1.9rem;
-}
+        top: 3.5rem;
+        right: 3rem;
+    }
 
-.faq__item--active .faq__title::after {
-        top: 2rem;
-    right: 3rem;
-}
+    .faq__item--active .faq__title::after {
+        top: 4.4rem;
+        right: 3.1rem;
+    }
+
+    .faq__item--active .faq__content {
+        margin-top: -0.3rem;
+    }
+
+    .faq__answer {
+        padding: 0.2rem 2.4rem 1.7rem 3.2rem;
+    }
+
+    .faq__answer--big {
+        padding: 0.2rem 1.8rem 1.7rem 3.2rem;
+    }
+
+    .faq__answer--small {
+        padding: 0.2rem 2.4rem 1.7rem 3.2rem;
+    }
 }
